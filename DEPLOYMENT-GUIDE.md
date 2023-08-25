@@ -1,5 +1,6 @@
 # Table of Contents
 
+
 1. [Introduction](#introduction)
 1. [Considerations](#considerations)
 1. [Architecture](#architecture)
