@@ -189,3 +189,6 @@ Variable Name | Description | Required | Default Value
 **existing_database_kms_dyn_group_name** | The name of an existing dynamic group to be used by databases in the Database compartment to access OCI KMS Keys. | No | None
 
 (*) A user with an API key must be assigned to the provisioning group. The module does not create or assign the user.
+
+
+-
