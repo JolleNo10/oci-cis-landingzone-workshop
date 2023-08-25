@@ -97,7 +97,7 @@ jobs:
       - uses: actions/github-script@v6
         if: github.event_name == 'pull_request'
         env:
-          PLAN: "OCI speculative terraform plan \n https://cloud.oracle.com/resourcemanager/jobs/${{ fromJson(${steps.run-tf-plan.outputs.output}) }}"
+          PLAN: "OCI speculative terraform plan \n https://cloud.oracle.com/resourcemanager/jobs/${{ jsondecode(steps.run-tf-plan.outputs.output) }}"
         with:
           github-token: ${{ secrets.GITHUB_TOKEN }}
           script: |
@@ -134,6 +134,7 @@ jobs:
             </details>
   
             *Pusher: @${{ github.actor }}, Action: \`${{ github.event_name }}\`, Working Directory: \`${{ env.tf_actions_working_dir }}\`, Workflow: \`${{ github.workflow }}\`*`;
+
   
             // 3. If we have a comment, update it, otherwise create a new one
             if (botComment) {
